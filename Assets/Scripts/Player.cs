@@ -13,9 +13,14 @@ public class Player : MonoBehaviour
     public float speed = 3.0f;
     public float resist = 0.96f;
 
+    public GameObject horizontalArrow;
+    public GameObject verticalArrow;
+
     void Start()
     {
         rd = GetComponent<Rigidbody2D>();
+        horizontalArrow.SetActive(allowHorizontalMove);
+        verticalArrow.SetActive(allowVerticalMove);
     }
 
     void FixedUpdate() {

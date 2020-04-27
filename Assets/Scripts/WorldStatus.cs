@@ -14,6 +14,8 @@ public class WorldStatus : MonoBehaviour
 
     public float time = 0.0f;
 
+    public string nextScene = "Template";
+
     public void Start(){
         worldColor = worldColors[worldColorIndex];
     }

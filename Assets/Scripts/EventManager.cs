@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EventManager : MonoBehaviour
 {
@@ -23,7 +24,10 @@ public class EventManager : MonoBehaviour
         Vector3 pos = player.position + (goal.position - player.position) * approachRate;
         player.position = pos;
         timeScale = 0.3f;
-        if((goal.position - player.position).magnitude < 0.03) ws.goaled = true;
+        if((goal.position - player.position).magnitude < 0.03) {
+            ws.goaled = true;
+            timeScale = 0.0f;
+        }
     }
 
     public void changeColor(int index){
@@ -34,7 +38,12 @@ public class EventManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(ws.goaled) return;
+        if(ws.goaled){
+            if(Input.GetKeyDown(KeyCode.Return)){
+                SceneManager.LoadScene(ws.nextScene);
+            }
+            return;
+        };
         if(ws.goalApproach) approaching();
         ws.time += timeScale / 60.0f;
 
