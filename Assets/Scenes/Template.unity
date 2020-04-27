@@ -301,6 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldStatus: {fileID: 1495471589}
+  mat: {fileID: 2100000, guid: 094089ad8a5c69a4195f456c95993c9a, type: 2}
   allowHorizontalMove: 1
   allowVerticalMove: 1
   force: 8
@@ -512,6 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldStatus: {fileID: 1495471589}
+  mat: {fileID: 2100000, guid: 57d866fb705598443a8b8cee29b7ce9e, type: 2}
 --- !u!50 &1036230755
 Rigidbody2D:
   serializedVersion: 4

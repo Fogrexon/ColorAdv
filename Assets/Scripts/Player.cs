@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rd;
     public WorldStatus worldStatus;
-    Material mat;
+    public Material mat;
     public bool allowHorizontalMove = true;
     public bool allowVerticalMove = true;
     public float force = 3.0f;
@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         rd = GetComponent<Rigidbody2D>();
-        mat = GetComponent<Renderer>().material;
     }
 
     void FixedUpdate() {

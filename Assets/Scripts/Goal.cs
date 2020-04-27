@@ -6,10 +6,9 @@ public class Goal : MonoBehaviour
 {
     public WorldStatus worldStatus;
 
-    Material mat;
+    public Material mat;
 
     void Start() {
-        mat = GetComponent<Renderer>().material;
     }
 
     void FixedUpdate() {
