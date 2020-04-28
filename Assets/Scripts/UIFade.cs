@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIFadeIn : MonoBehaviour
+public class UIFade : MonoBehaviour
 {
     public WorldStatus worldStatus;
     bool flag = false;
+    public bool fadeIn = true;
+    public bool startFade = false;
     public float duration = 1f;
     float restTime;
 
@@ -18,13 +20,13 @@ public class UIFadeIn : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(!flag && worldStatus.goaled) {
+        if(!flag && (worldStatus.goaled || startFade)) {
             flag = true;
             restTime = duration;
         }
         if(flag && restTime > 0){
             restTime -= Time.deltaTime;
-            canvasGroup.alpha = 1.0f - restTime / duration;
+            canvasGroup.alpha = fadeIn ? 1.0f - restTime / duration : restTime / duration;
             
         }
     }
