@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
     public Material mat;
     public bool allowHorizontalMove = true;
     public bool allowVerticalMove = true;
-    public float force = 3.0f;
-    public float speed = 3.0f;
+    float force = 15.0f;
+    float speed = 15.0f;
     public float resist = 0.96f;
 
     public GameObject horizontalArrow;

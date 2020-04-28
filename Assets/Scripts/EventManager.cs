@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EventManager : MonoBehaviour
 {
-    float timeScale = 1.0f;
+    public float timeScale = 1.0f;
 
     float approachRate = 0.02f;
     public Transform player;
