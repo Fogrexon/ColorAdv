@@ -27,6 +27,6 @@ public class ColorChanger : MonoBehaviour
 
     void Update()
     {
-        if(worldStatus.worldColorChange > 0) changeColor();
+        if(worldStatus.worldColorChange >= 0) changeColor();
     }
 }

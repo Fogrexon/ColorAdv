@@ -806,8 +806,6 @@ MonoBehaviour:
   mat: {fileID: 2100000, guid: 094089ad8a5c69a4195f456c95993c9a, type: 2}
   allowHorizontalMove: 1
   allowVerticalMove: 0
-  force: 8
-  speed: 8
   resist: 0.96
   horizontalArrow: {fileID: 3670509478202397305}
   verticalArrow: {fileID: 3670509477614583598}
@@ -1521,7 +1519,7 @@ MonoBehaviour:
   goalApproach: 0
   goaled: 0
   time: 0
-  nextScene: Two
+  nextScene: 2
 --- !u!114 &3670509478025160975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1534,6 +1532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34b0ce0e70a3ff41be25a64719e2cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeScale: 1
   player: {fileID: 3670509476880782570}
   goal: {fileID: 3670509477423242381}
 --- !u!4 &3670509478096105350

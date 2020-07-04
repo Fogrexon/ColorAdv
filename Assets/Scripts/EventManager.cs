@@ -18,6 +18,7 @@ public class EventManager : MonoBehaviour
     void Start()
     {
         ws = GetComponent<WorldStatus>();
+        changeColor(0);
     }
 
     void approaching() {
@@ -33,10 +34,10 @@ public class EventManager : MonoBehaviour
     public void changeColor(int index){
         ws.worldColorIndex = index;
         ws.targetColor = ws.worldColors[index];
-        ws.worldColorChange = 120;
+        ws.worldColorChange = 30;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if(ws.goaled){
             if(Input.GetKeyDown(KeyCode.Return)){
@@ -45,10 +46,11 @@ public class EventManager : MonoBehaviour
             return;
         };
         if(ws.goalApproach) approaching();
-        ws.time += timeScale / 60.0f;
+        ws.time += timeScale * Time.deltaTime;
 
-        if(ws.worldColorChange <= 0) return;
+        if(ws.worldColorChange < 0) return;
+        ws.worldColor += (ws.targetColor - ws.worldColor) * 0.1f;
+        if(ws.worldColorChange==1) ws.worldColor = ws.targetColor;
         ws.worldColorChange --;
-        ws.worldColor += (ws.targetColor - ws.worldColor) * 0.04f;
     }
 }

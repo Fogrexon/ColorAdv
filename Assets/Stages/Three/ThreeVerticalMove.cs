@@ -5,8 +5,9 @@ using UnityEngine;
 public class ThreeVerticalMove : MonoBehaviour
 {
     public WorldStatus worldStatus;
+    public float start = 0f;
     public float range = 5f;
-    public float speed = 3f;
+    public float speed = 0.3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class ThreeVerticalMove : MonoBehaviour
     void Update()
     {
         Vector3 pos = transform.position;
-        pos.y = Mathf.Sin(worldStatus.time * speed) * range;
+        pos.y = Mathf.Sin(worldStatus.time * Mathf.PI * 2.0f * speed + start) * range;
         transform.position = pos;
     }
 }
