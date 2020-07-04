@@ -23,6 +23,7 @@ public class UIFade : MonoBehaviour
         if(!flag && (worldStatus.goaled || startFade)) {
             flag = true;
             restTime = duration;
+            PlayerPrefs.SetInt("OpenedStage" , int.Parse(GameObject.FindWithTag("GameController").GetComponent<WorldStatus>().nextScene));
         }
         if(flag && restTime > 0){
             restTime -= Time.deltaTime;
